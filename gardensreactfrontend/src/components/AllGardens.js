@@ -10,8 +10,19 @@ class AllGardens extends Component {
                     <div key={garden.id}>
                         <div className="container">
                             <Link to={`/gardens/${garden.id}`}>
-                                <div className="centered">{garden.name}</div>
+                                <div className="centered">{garden.name} 
+                                {/* <button
+                key={`button-${garden.id}`}
+                id={garden.id}
+                // arrayindex={id}
+                onClick={this.props.deleteGarden}
+              >
+                Delete
+              </button> */}
+                                </div>
+                                
                                 <img src={garden.img} /></Link>
+                                
                         </div>
                     </div>
                 </div>
@@ -21,14 +32,16 @@ class AllGardens extends Component {
         return (
             <div><br />
                 {/* <h1> All Gardens</h1>   */}
-                <div className="dispImage">
-                    {allGardens}
-                </div> <br />
-                {/* <h3>Create a New Garden</h3>
+                <h3>Create a New Garden</h3>
                 <form onSubmit={this.props.addGarden}>
                     Garden Name: <input type="text" name="name" />
                     <input type="submit" value="Add Garden" />
-                </form> <br /> <br /> */}
+                </form> <br /> <br />
+                <div className="dispImage">
+                    {allGardens}
+                 
+                </div> <br />
+               
             </div>
         );
     }

@@ -19,7 +19,13 @@ class GardenDetail extends Component {
 
         return (
             <div>
-                <h3>Some of {gardenDetail.name} Plants</h3> <br /><br />
+                <h3>Some of {gardenDetail.name} Plant Varieties</h3> <br />
+                <form onSubmit={(e) => this.props.updateGarden(e)}>
+                    <input type="text" name="name" placeholder={gardenDetail.name} />
+                    <input type="hidden" name="gardenId" value={gardenDetail.id} />
+                    <input type="submit" value="Update Garden" />
+                </form> <br />
+
                 {/* <h5>Add a New Plant</h5>
                     <form onSubmit={this.props.addPlant}>
                     <input type="hidden" name="gardenId" value={gardenDetail.id} />
