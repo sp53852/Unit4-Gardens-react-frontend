@@ -72,35 +72,40 @@ class App extends Component {
       });
   };
 
-  updateGarden =  (e) => {
+  updateGarden = (e) => {
     e.preventDefault();
     let gardenId = parseInt(e.target.gardenId.value);
-   axios.put('http://localhost:3000/api/gardens/' + gardenId, {
+    axios.put('http://localhost:3000/api/gardens/' + gardenId, {
       name: e.target.name.value,
       id: gardenId
     })
-    .then ((response) => {
-      axios.get('http://localhost:3000/api/gardens').then((response) => {
-      this.setState({
-        gardens: response.data.gardens,
-      })
-      console.log(this.state.gardens)
-    })
-
-      // console.log(response)
-      // let setGardens = ({
-      //   gardens.map((garden, id) => {
-      //     if (garden.id == this.updateGarden.id){
-      //       return updatedGarden;
-      //     } else {
-      //       return garden;
-      //     }
-      //   })
+      .then((response) => {
+        axios.get('http://localhost:3000/api/gardens').then((response) => {
+          this.setState({
+            gardens: response.data.gardens,
+          })
+          console.log(this.state.gardens)
+        })
       }
-
       )
-    // });
-    };
+  };
+
+  deleteGarden = (gardenId) => {
+    
+    console.log('http://localhost:3000/api/gardens/' + gardenId)
+    axios.delete('http://localhost:3000/api/gardens/' + gardenId)
+      .then((response) => {
+        console.log("selected garden deleted" );
+        axios.get('http://localhost:3000/api/gardens').then((response) => {
+          this.setState({
+            gardens: response.data.gardens,
+          })
+          console.log(this.state.gardens)
+        })
+      }
+      )
+  };
+    
 
 
   render() {
@@ -121,7 +126,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/gardens'>
             {/* <AllGardens gardens={this.state.gardens} /> */}
-            <AllGardens gardens={this.state.gardens} addGarden={this.addGarden} />
+            <AllGardens gardens={this.state.gardens} addGarden={this.addGarden} deleteGarden={this.deleteGarden} />
           </Route>
           <Route
             path="/gardens/:id"

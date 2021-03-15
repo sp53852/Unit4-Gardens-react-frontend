@@ -10,19 +10,12 @@ class AllGardens extends Component {
                     <div key={garden.id}>
                         <div className="container">
                             <Link to={`/gardens/${garden.id}`}>
-                                <div className="centered">{garden.name} 
-                                {/* <button
-                key={`button-${garden.id}`}
-                id={garden.id}
-                // arrayindex={id}
-                onClick={this.props.deleteGarden}
-              >
-                Delete
-              </button> */}
-                                </div>
-                                
+                                <div className="centered">{garden.name}</div>
                                 <img src={garden.img} /></Link>
-                                
+                                <button key={`button-${garden.id}`}
+                                id={garden.id}
+                                onClick={() => this.props.deleteGarden(garden.id)} >
+                                Delete </button>
                         </div>
                     </div>
                 </div>
@@ -39,9 +32,9 @@ class AllGardens extends Component {
                 </form> <br /> <br />
                 <div className="dispImage">
                     {allGardens}
-                 
+
                 </div> <br />
-               
+
             </div>
         );
     }
