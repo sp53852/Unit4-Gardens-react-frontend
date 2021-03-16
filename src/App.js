@@ -10,13 +10,15 @@ import GardenDetail from './components/GardenDetail';
 class App extends Component {
   constructor() {
     super();
+    // this.apiURL = 'http://localhost:3000/api/'
+    this.apiURL = 'https://gardenplantssharmila.herokuapp.com/api/'
     this.state = {
       gardens: []
     }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/gardens').then((response) => {
+    axios.get(`${this.apiURL}gardens`).then((response) => {
       this.setState({
         gardens: response.data.gardens,
       })
@@ -59,7 +61,7 @@ class App extends Component {
   addGarden = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3000/api/gardens', {
+      .post(`${this.apiURL}gardens`, {
         name: e.target.name.value,
       })
       .then((response) => {
@@ -69,18 +71,24 @@ class App extends Component {
         this.setState({
           gardens: tempArray,
         });
+        axios.get(`${this.apiURL}gardens`).then((response) => {
+          this.setState({
+            gardens: response.data.gardens,
+          })
+          console.log(this.state.gardens)
+        })
       });
   };
 
   updateGarden = (e) => {
     e.preventDefault();
     let gardenId = parseInt(e.target.gardenId.value);
-    axios.put('http://localhost:3000/api/gardens/' + gardenId, {
+    axios.put(`${this.apiURL}gardens/` + gardenId, {
       name: e.target.name.value,
       id: gardenId
     })
       .then((response) => {
-        axios.get('http://localhost:3000/api/gardens').then((response) => {
+        axios.get(`${this.apiURL}gardens`).then((response) => {
           this.setState({
             gardens: response.data.gardens,
           })
@@ -92,11 +100,11 @@ class App extends Component {
 
   deleteGarden = (gardenId) => {
     
-    console.log('http://localhost:3000/api/gardens/' + gardenId)
-    axios.delete('http://localhost:3000/api/gardens/' + gardenId)
+    console.log(`${this.apiURL}gardens/` + gardenId)
+    axios.delete(`${this.apiURL}gardens/` + gardenId)
       .then((response) => {
         console.log("selected garden deleted" );
-        axios.get('http://localhost:3000/api/gardens').then((response) => {
+        axios.get(`${this.apiURL}gardens`).then((response) => {
           this.setState({
             gardens: response.data.gardens,
           })

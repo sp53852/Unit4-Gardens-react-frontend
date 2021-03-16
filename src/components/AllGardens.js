@@ -12,10 +12,12 @@ class AllGardens extends Component {
                             <Link to={`/gardens/${garden.id}`}>
                                 <div className="centered">{garden.name}</div>
                                 <img src={garden.img} /></Link>
+                                <div className="btndelete">
                                 <button key={`button-${garden.id}`}
                                 id={garden.id}
                                 onClick={() => this.props.deleteGarden(garden.id)} >
-                                Delete </button>
+                                Delete </button> 
+                                </div>
                         </div>
                     </div>
                 </div>

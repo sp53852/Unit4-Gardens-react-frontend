@@ -31,3 +31,12 @@ img{
     left: 20%;
     right:20%;
   }
+
+  .btndelete {
+    position: absolute;
+    text-align:center;
+    top: 0%;
+    left: 20%;
+    /* right:20%; */
+    right: -40%;
+  }
