@@ -1,67 +1,37 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+# Unit4 Project - Garden Plants
+# Frontend app with React
+One of my hobby is gardening. So, wanted to create an app with different gardens and associated plants.
 
 ### Project Links
 - GitHub Repository: https://github.com/sp53852/Unit4-Gardens-react-frontend
 - Heroku Deployment: https://gardenplantsfesharmila.herokuapp.com/
 
+### Wireframes
+ - ![informed optimism?](images/IMG_0667.jpg)
+ - ![informed optimism?](images/IMG_0668.jpg)
 
-### `npm test`
+## Requirements
+### Technical Requirements
+- 	React
+-   React router Dom
+-	Browser Routers 
+-	Axios
+-   cors
+-   Javascript, HTML CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Main File Structure
+1. index.js
+2. App.js
+3. AllGardens.js
+4. GardenDetail.js
 
-### `npm run build`
+### User Stories:
+1.	As a developer, I want to be able to setup react app for frontend.
+2.	As a developer, I want to be able to see all gardens in the garden app.
+3.	As a developer, I want to be able to see specific garden details i.e associated plants with the gardens.
+4. As a developer, I want to be able to implement CRUD functionality for gardens.
+5.	As a developer, I want to be able to deploy front-end app with Heroku.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Improvements
+1. Would like to add Signup and login functions to User.
+2. Would like to add CRUD functionality for User. 
