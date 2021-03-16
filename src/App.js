@@ -4,8 +4,6 @@ import { Switch, Route, Link } from 'react-router-dom';
 import axios from "axios";
 import AllGardens from './components/AllGardens';
 import GardenDetail from './components/GardenDetail';
-// const backendUrl =
-//   process.env.REACT_APP_BACKEND_URL || "http://localhost:3000/api";
 
 class App extends Component {
   constructor() {
@@ -129,7 +127,7 @@ class App extends Component {
         </div> 
         <div>
           <Link to="/gardens">Gardens Catalogue</Link>
-        </div> <br/><br/>
+        </div> <br/>
 
         <Switch>
           <Route exact path='/gardens'>
