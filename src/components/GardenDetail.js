@@ -25,7 +25,7 @@ class GardenDetail extends Component {
                     <input type="hidden" name="gardenId" value={gardenDetail.id} />
                     <input type="submit" value="Update Garden" />
                 </form> 
-                <h3>Some of {gardenDetail.name} Plant Varieties</h3> <br />
+                <h3>Some of <span>{gardenDetail.name}</span> Plant Varieties</h3> <br />
 
                 {/* <h5>Add a New Plant</h5>
                     <form onSubmit={this.props.addPlant}>
