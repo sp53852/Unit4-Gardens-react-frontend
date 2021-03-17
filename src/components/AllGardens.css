@@ -28,7 +28,7 @@ img.allgardenpics, img{
     top: 0%;
     left: 20%;
     right:20%;
-    /* color:blue; */
+    color: #0a80fc
 }
 
 .btndelete {
@@ -40,5 +40,6 @@ img.allgardenpics, img{
 }
 
 span {
-    color:hsl(236, 83%, 56%);
+    color: #0a80fc;
+    font-weight:bold;
 }
