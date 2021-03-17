@@ -4,6 +4,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import axios from "axios";
 import AllGardens from './components/AllGardens';
 import GardenDetail from './components/GardenDetail';
+import Nav from 'react-bootstrap/Nav'
 
 class App extends Component {
   constructor() {
@@ -55,7 +56,6 @@ class App extends Component {
   //     });
   // };
 
-
   addGarden = (e) => {
     e.preventDefault();
     axios
@@ -97,11 +97,10 @@ class App extends Component {
   };
 
   deleteGarden = (gardenId) => {
-    
     console.log(`${this.apiURL}gardens/` + gardenId)
     axios.delete(`${this.apiURL}gardens/` + gardenId)
       .then((response) => {
-        console.log("selected garden deleted" );
+        console.log("selected garden deleted");
         axios.get(`${this.apiURL}gardens`).then((response) => {
           this.setState({
             gardens: response.data.gardens,
@@ -111,37 +110,26 @@ class App extends Component {
       }
       )
   };
-    
-
 
   render() {
     console.log(this.state.gardens)
     return (
       <div className="App">
-        <header className="box">
-          <h1>Famous Gardens</h1>
-        </header> <br/>
+        <header className="headerbox"><h1>Famous Gardens </h1></header>
 
-        <div>
-          <Link to="/">Home</Link>
-        </div> 
-        <div>
-          <Link to="/gardens">Gardens Catalogue</Link>
-        </div> <br/>
+        <Nav.Link className="homel" href="/">Home</Nav.Link>
+        <Nav.Link href="/gardens">Gardens Catalogue</Nav.Link> <br />
+
+        {/* <div><Link to="/">Home</Link></div>  */}
+        {/* <div><Link to="/gardens">Gardens Catalogue</Link></div> <br/> */}
 
         <Switch>
           <Route exact path='/gardens'>
-            {/* <AllGardens gardens={this.state.gardens} /> */}
             <AllGardens gardens={this.state.gardens} addGarden={this.addGarden} deleteGarden={this.deleteGarden} />
           </Route>
-          <Route
-            path="/gardens/:id"
-            component={(routerProps) => (
-              <GardenDetail
-                {...routerProps}
-                gardens={this.state.gardens} updateGarden={this.updateGarden}
-              />
-            )}
+          <Route path="/gardens/:id" component={(routerProps) => (
+            <GardenDetail {...routerProps} gardens={this.state.gardens} updateGarden={this.updateGarden} />
+          )}
           />
           {/* <Route
               path="/gardens/:id"
@@ -153,14 +141,9 @@ class App extends Component {
                 />
               )}
             /> */}
-
         </Switch>
-            {/* <div className='fbox'> 
-              <footer><h1>Footer</h1></footer>
-            </div>  */}
       </div>
     );
   }
 }
-
 export default App;

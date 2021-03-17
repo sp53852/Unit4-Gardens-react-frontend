@@ -1,46 +1,44 @@
-img{
-    /* border-radius: 50%; */
-    /* border-radius: 15px ; top left, top right, bottom right, bottom left */
+img.allgardenpics, img{
     border-radius:  15%;
     height: 300px;
     width:300px;
-    margin:30px;
-    border: solid 3px rgb(73, 75, 1);
+    margin:30px; 
 }
+.pics {
+  display:block;
+  height: 300px;
+  width:300px;
+  margin-bottom: 50px;
+}
+
 .dispImage{
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
-    align-items: center;
-    /* color: #800000; */
 }
 
 .container {
     position: relative;    
-    /* color: white; */
-    /* color: #800000; */
-    /* color:black; */
-    /* font-family: Georgia, 'Times New Roman', Times, serif; */
-    font-weight: bold;
-   
-  }
+    font-weight: bold; 
+}
+
 .centered {
     position: absolute;
     text-align:center;
     top: 0%;
     left: 20%;
     right:20%;
-  }
+    /* color:blue; */
+}
 
-  .btndelete {
+.btndelete {
     position: absolute;
     text-align:center;
     top: 0%;
     left: 20%;
-    /* right:20%; */
-    right: -40%;
-  }
+    right: -60%;
+}
 
-  span {
-    color: red;
-  }
+span {
+    color:hsl(236, 83%, 56%);
+}

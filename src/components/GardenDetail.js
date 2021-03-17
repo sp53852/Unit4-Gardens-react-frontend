@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// import './GardenDetail.css';
+import { Image } from "react-bootstrap";
+import Button from 'react-bootstrap/Button'
 
 class GardenDetail extends Component {
     render() {
@@ -9,22 +10,22 @@ class GardenDetail extends Component {
         const gardenPlants = gardenDetail.Plants.map((plant) => {
             return <div key={plant.id}>
                 <div className="container">
-                    <div className="namecentered">
-                        {plant.name}
-                    </div>
-                    <img src={plant.img} />
+                    <div className="centered">{plant.name}</div>
+                    {/* <img src={plant.img} /> */}
+                    <div className="pics"><Image className='allgardenpics' src={plant.img} thumbnail /></div>
                 </div>
             </div>;
         });
 
         return (
             <div>
-                <br/>
+                <br />
                 <form onSubmit={(e) => this.props.updateGarden(e)}>
                     <input type="text" name="name" placeholder={gardenDetail.name} />
                     <input type="hidden" name="gardenId" value={gardenDetail.id} />
-                    <input type="submit" value="Update Garden" />
-                </form> 
+                    {/* <input type="submit" value="Update Garden" /> */}
+                    <Button type="submit" variant="primary" size="sm">Update Garden</Button>{' '}
+                </form> <br /><br /><br />
                 <h3>Some of <span>{gardenDetail.name}</span> Plant Varieties</h3> <br />
 
                 {/* <h5>Add a New Plant</h5>
@@ -33,11 +34,9 @@ class GardenDetail extends Component {
                     Plant Name: <input type="text" name="name" />
                     <input type="submit" value="Add Plant" />
                     </form> */}
-                <div className="dispImage">{gardenPlants}
-                </div>
+                <div className="dispImage">{gardenPlants}</div>
             </div>
         );
     }
 }
-
 export default GardenDetail;
